@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car race</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            height: 100vh;
+            position: relative;
+            font-family: sans-serif;
+        }
+
+        .background{
+            background-image: url("https://img.freepik.com/free-vector/scene-with-house-garden_1308-94512.jpg?semt=ais_hybrid&w=740");
+            height: 100vh;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-position: center;
+            min-height: calc(100vh + 100px);
+            position: relative;
+        }
+        .road {
+        position: absolute;
+        bottom: 0;
+        width: 100%;
+        height: 100px;
+        background-color: gray;
+    }
+
+
+
+    .road::before {
+        top: 0; 
+        background-image: repeating-linear-gradient(
+            to right,
+            red 0 100px,
+            white 100px 200px
+        );
+    }
+
+    .road::after {
+        bottom: 0; 
+        background-image: repeating-linear-gradient(
+            to right,
+            white 0 100px,
+            red 100px 200px
+        );
+    }
+        .bus {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            font-size: 80px;
+            animation: drive 3s linear infinite;
+        }
+
+        .bus1 {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            font-size: 80px;
+            animation: drive 6s linear infinite;
+
+        }
+
+        .bus2 {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            font-size: 80px;
+            animation: drive 1s linear infinite;
+
+        }
+
+        @keyframes drive {
+            0% {
+                right: 0;
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(8deg);
+            }
+
+            50% {
+                transform: rotate(2deg);
+            }
+
+            75% {
+                transform: rotate(-3deg);
+            }
+
+            100% {
+                right: 100%;
+                transform: rotate(0deg);
+            }
+        }
+
+        .traffic-light {
+            position: absolute;
+            width: 40px;
+            bottom: 300px;
+            right: 9px;
+            height: 120px;
+            background: black;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 0 5px black;
+        }
+
+        .light {
+            width: 20px;
+            height: 20px;
+
+            background-color: grey;
+            margin: 5px auto;
+            padding: 5px;
+            border-radius: 100%;
+        }
+
+        .light.red {
+            background: red;
+            animation: blink 1s infinite alternate;
+        }
+
+        .light.yellow {
+            background: yellow;
+            animation: blink 1s infinite alternate;
+        }
+
+        .light.green {
+            background: rgb(37, 245, 37);
+            animation:blink 1s infinite alternate;
+        }
+        .stick{
+            background-color: black;
+            margin: 0 auto;
+            position: absolute;
+            bottom: 100px;
+            width: 10px;
+            right: 29px;
+            height: 205px;
+            border-radius: 10px;
+
+        }
+        
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .finish-line {
+            background: red;
+            height: 150px;
+            width: 10px;
+            position: absolute;
+            bottom: 100px;
+            background: repeating-linear-gradient(45deg, white, white 10px, black 10px, black 20px);
+            box-shadow: 0 0 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="background">
+    <div class="traffic-light">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+    <div class="stick"></div>
+
+    <div class="bus">&#x1F68C;</div>
+    <div class="bus1">&#x1F68E;</div>
+    <div class="bus2">&#x1F690;</div>
+
+
+    <div class="spead-breaker"></div>
+    <div class="finish-line"></div>
+    <div class="road"></div>
+
+</div>
+</body>
+
+</html>
