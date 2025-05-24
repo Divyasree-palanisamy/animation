@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Car race</title>
+    <style>
+        body {
+            margin: 0;
+            overflow: hidden;
+            background-image: url("https://media.istockphoto.com/id/1185199335/vector/straight-empty-road-through-the-countryside-on-city-background-green-hills-blue-sky-meadow.jpg?s=612x612&w=0&k=20&c=fCDrmZ2Jw215-gyCsD4MirJabBK77LIYEa1Dq2yt9h0=");
+            height: 100vh;
+            position: relative;
+            font-family: sans-serif;
+        }
+
+        .road {
+            position: absolute;
+            bottom: 0;
+            width: 100%;
+            height: 100px;
+            background: #333;
+            border-top: 5px dashed white;
+        }
+
+        .car {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            font-size: 80px;
+            animation: drive 6s linear infinite;
+        }
+
+        .car1 {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            font-size: 80px;
+            animation: drive 8s linear infinite;
+
+        }
+
+        .car2 {
+            position: absolute;
+            bottom: 100px;
+            right: 0;
+            font-size: 80px;
+            animation: drive 10s linear infinite;
+
+        }
+
+        @keyframes drive {
+            0% {
+                right: 0;
+                transform: rotate(0deg);
+            }
+
+            25% {
+                transform: rotate(10deg);
+            }
+
+            50% {
+                transform: rotate(0deg);
+            }
+
+            75% {
+                transform: rotate(-3deg);
+            }
+
+            100% {
+                right: 100%;
+                transform: rotate(0deg);
+            }
+        }
+
+        .traffic-light {
+            position: absolute;
+            bottom: 190px;
+            width: 40px;
+            right: 9px;
+            height: 80px;
+            background: black;
+            border-radius: 10px;
+            padding: 5px;
+            box-shadow: 0 0 5px black;
+        }
+
+        .light {
+            width: 20px;
+            height: 20px;
+            background-color: grey;
+            margin: 5px auto;
+            border-radius: 100%;
+        }
+
+        .light.red {
+            background: red;
+        }
+
+        .light.yellow {
+            background: yellow;
+            animation: blink 1s infinite alternate;
+        }
+
+        .light.green {
+            background: green;
+        }
+
+        @keyframes blink {
+            0% {
+                opacity: 1;
+            }
+
+            100% {
+                opacity: 0.3;
+            }
+        }
+
+        .finish-line {
+            background: red;
+            height: 100px;
+            width: 20px;
+            position: absolute;
+            bottom: 100px;
+            background: repeating-linear-gradient(45deg, white, white 10px, black 10px, black 20px);
+            box-shadow: 0 0 5px black;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="traffic-light">
+        <div class="light red"></div>
+        <div class="light yellow"></div>
+        <div class="light green"></div>
+    </div>
+    <div class="car">&#x1F697;</div>
+    <div class="car1">&#x1F699;</div>
+    <div class="car2">&#x1F695;</div>
+
+    <div class="finish-line"></div>
+    <div class="road"></div>
+</body>
+
+</html>
